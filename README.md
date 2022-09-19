@@ -2,7 +2,7 @@
 
 This is an example React project that uses Highcharts to display the average monthly temperature in Minneapolis for each month in 2021. The app gets it's data from the [ACIS RCC] (https://www.rcc-acis.org/).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App]https://github.com/facebook/create-react-app).
 
 ## Running the project
 
