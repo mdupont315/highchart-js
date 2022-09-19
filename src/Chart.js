@@ -17,20 +17,20 @@ function Chart() {
     useEffect(() => {
         setIsLoading(true);
         const fetchRecords = async () => {
-            const query = { 
+            const query = {
                 elems: [
-                    { 
-                        interval: "mly", 
-                        duration: 1, 
-                        name: "avgt", 
-                        reduce: { "reduce": "mean" }, 
+                    {
+                        interval: "mly",
+                        duration: 1,
+                        name: "avgt",
+                        reduce: { "reduce": "mean" },
                         prec: 3
-                    }], 
-                    sid: "MSPthr 9", 
-                    sDate: "2021-01-01", 
-                    eDate: "2021-12-31", 
-                    meta: ["name", "state", "sids"] 
-                }
+                    }],
+                sid: "MSPthr 9",
+                sDate: "2021-01-01",
+                eDate: "2021-12-31",
+                meta: ["name", "state", "sids"]
+            }
 
             const response = await fetch(url, {
                 method: 'POST',
@@ -72,7 +72,6 @@ function Chart() {
                         dataLabels: {
                             enabled: true
                         },
-        
                     }
                 },
                 series: [
@@ -81,8 +80,8 @@ function Chart() {
                         color: "#7393B3",
                         data: seriesData,
                         zIndex: 1,
-              
-                      }
+
+                    }
                 ]
             });
 
@@ -96,29 +95,21 @@ function Chart() {
     return (
         <Row>
             <Col xs={12}>
-                <div className="card shadow mb-4">
-                    <div className="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                        <h1 className="m-0 font-weight-bold text-primary">React Highcharts example</h1>
-                    </div>
-                    <div className="card-body">
-                        <Row>
-                            <Col s={12} className="mb-2">
-                                <div className="card border-left-danger shadow h-100 py-2">
-                                    <div className="card-body">
-                                        {isLoading &&
-                                            <div>Loading data...</div>
-                                        }
-                                        {!isLoading && options &&
-                                            <HighchartsReact
-                                                highcharts={Highcharts}
-                                                options={options}
-                                            />
-                                        }
-                                    </div>
-                                </div>
-                            </Col>
-                        </Row>
-                    </div>
+                <div>
+                    <h1>React Highcharts example</h1>
+                    <Row>
+                        <Col s={12}>
+                            {isLoading &&
+                                <div>Loading data...</div>
+                            }
+                            {!isLoading && options &&
+                                <HighchartsReact
+                                    highcharts={Highcharts}
+                                    options={options}
+                                />
+                            }
+                        </Col>
+                    </Row>
                 </div>
             </Col>
         </Row>
